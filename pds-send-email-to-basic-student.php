@@ -73,6 +73,8 @@ if ( ! class_exists( 'PDS_Send_Email_to_Basic_Student' ) ) {
 			
 			// Register our CSS/JS for the whole plugin
 			add_action( 'init', array( $this, 'register_scripts' ) );
+
+			add_action( 'set_user_role', array( $this, 'set_user_role' ), 10, 3 );
 			
 		}
 
@@ -233,6 +235,36 @@ if ( ! class_exists( 'PDS_Send_Email_to_Basic_Student' ) ) {
 				apply_filters( 'pds_send_email_to_basic_student_localize_admin_script', array() )
 			);
 			
+		}
+
+		/**
+		 * Send a welcome email to Basic Students once they're granted that Role
+		 * This will fire off no matter how they are made a Basic Student
+		 *
+		 * @param   integer  $user_id    WP_User ID
+		 * @param   string   $new_role   User Role they were granted/switched to
+		 * @param   array    $old_roles  User Role(s) they were previously
+		 *
+		 * @access	public
+		 * @since	{{VERSION}}
+		 * @return  void
+		 */
+		public function set_user_role( $user_id, $new_role, $old_roles ) {
+
+			if ( $new_role !== 'basic_student' ) return;
+
+			$user_data = get_userdata( $user_id );
+
+			wp_mail(
+				$user_data->user_email,
+				sprintf( __( 'Welcome to %s!', 'pds-send-email-to-basic-student' ), trim( get_bloginfo( 'name' ) ) ),
+				__( 'Some message', 'pds-send-email-to-basic-student' ),
+				'',
+				array(
+					PDS_Send_Email_to_Basic_Student_DIR . 'welcome.pdf',
+				)
+			);
+
 		}
 		
 	}
