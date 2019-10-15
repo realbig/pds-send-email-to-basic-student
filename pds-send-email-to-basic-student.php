@@ -7,6 +7,8 @@
  * Author: Real Big Marketing
  * Author URI: https://realbigmarketing.com/
  * Contributors: d4mation
+ * GitHub Plugin URI: realbig/pds-send-email-to-basic-student
+ * GitHub Branch: master
  */
 
 // Exit if accessed directly
