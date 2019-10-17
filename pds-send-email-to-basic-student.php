@@ -259,8 +259,8 @@ if ( ! class_exists( 'PDS_Send_Email_to_Basic_Student' ) ) {
 
 			wp_mail(
 				$user_data->user_email,
-				sprintf( __( 'Welcome to %s!', 'pds-send-email-to-basic-student' ), trim( get_bloginfo( 'name' ) ) ),
-				__( 'Some message', 'pds-send-email-to-basic-student' ),
+				sprintf( __( 'Welcome to the %s Student Pages', 'pds-send-email-to-basic-student' ), trim( get_bloginfo( 'name' ) ) ),
+				sprintf( __( "Hello, You are all set now. Here is a summary of what you will find on the Student dropdown pages. There is a guide on what you will find on under \"Students\" on the website attached. Happy exploring, Master Young\n\nWelcome to the %s. Your status has been updated to provide you access to the \"Students\" pages on the %s website.", 'pds-send-email-to-basic-student' ), trim( get_bloginfo( 'name' ) ), trim( get_bloginfo( 'name' ) ) ),
 				'',
 				array(
 					PDS_Send_Email_to_Basic_Student_DIR . 'welcome.pdf',
