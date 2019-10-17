@@ -1,6 +1,6 @@
 {
   "name": "pds_send_email_to_basic_student",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.3",

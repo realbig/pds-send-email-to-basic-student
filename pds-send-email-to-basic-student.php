@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Peaceful Dragon School - Send Email to Basic Student
  * Description: When a User is switched to the Basic Student Role, this will automatically send them an email
- * Version: 0.1.0
+ * Version: 1.0.0
  * Text Domain: pds-send-email-to-basic-student
  * Author: Real Big Marketing
  * Author URI: https://realbigmarketing.com/
@@ -19,19 +19,19 @@ if ( ! class_exists( 'PDS_Send_Email_to_Basic_Student' ) ) {
 	/**
 	 * Main PDS_Send_Email_to_Basic_Student class
 	 *
-	 * @since	  {{VERSION}}
+	 * @since	  1.0.0
 	 */
 	final class PDS_Send_Email_to_Basic_Student {
 		
 		/**
 		 * @var			array $plugin_data Holds Plugin Header Info
-		 * @since		{{VERSION}}
+		 * @since		1.0.0
 		 */
 		public $plugin_data;
 		
 		/**
 		 * @var			array $admin_errors Stores all our Admin Errors to fire at once
-		 * @since		{{VERSION}}
+		 * @since		1.0.0
 		 */
 		private $admin_errors;
 
@@ -39,7 +39,7 @@ if ( ! class_exists( 'PDS_Send_Email_to_Basic_Student' ) ) {
 		 * Get active instance
 		 *
 		 * @access	  public
-		 * @since	  {{VERSION}}
+		 * @since	  1.0.0
 		 * @return	  object self::$instance The one true PDS_Send_Email_to_Basic_Student
 		 */
 		public static function instance() {
@@ -84,7 +84,7 @@ if ( ! class_exists( 'PDS_Send_Email_to_Basic_Student' ) ) {
 		 * Setup plugin constants
 		 *
 		 * @access	  private
-		 * @since	  {{VERSION}}
+		 * @since	  1.0.0
 		 * @return	  void
 		 */
 		private function setup_constants() {
@@ -123,7 +123,7 @@ if ( ! class_exists( 'PDS_Send_Email_to_Basic_Student' ) ) {
 		 * Internationalization
 		 *
 		 * @access	  private 
-		 * @since	  {{VERSION}}
+		 * @since	  1.0.0
 		 * @return	  void
 		 */
 		private function load_textdomain() {
@@ -160,7 +160,7 @@ if ( ! class_exists( 'PDS_Send_Email_to_Basic_Student' ) ) {
 		 * Include different aspects of the Plugin
 		 * 
 		 * @access	  private
-		 * @since	  {{VERSION}}
+		 * @since	  1.0.0
 		 * @return	  void
 		 */
 		private function require_necessities() {
@@ -171,7 +171,7 @@ if ( ! class_exists( 'PDS_Send_Email_to_Basic_Student' ) ) {
 		 * Show admin errors.
 		 * 
 		 * @access	  public
-		 * @since	  {{VERSION}}
+		 * @since	  1.0.0
 		 * @return	  HTML
 		 */
 		public function admin_errors() {
@@ -190,7 +190,7 @@ if ( ! class_exists( 'PDS_Send_Email_to_Basic_Student' ) ) {
 		 * Register our CSS/JS to use later
 		 * 
 		 * @access	  public
-		 * @since	  {{VERSION}}
+		 * @since	  1.0.0
 		 * @return	  void
 		 */
 		public function register_scripts() {
@@ -248,7 +248,7 @@ if ( ! class_exists( 'PDS_Send_Email_to_Basic_Student' ) ) {
 		 * @param   array    $old_roles  User Role(s) they were previously
 		 *
 		 * @access	public
-		 * @since	{{VERSION}}
+		 * @since	1.0.0
 		 * @return  void
 		 */
 		public function set_user_role( $user_id, $new_role, $old_roles ) {
@@ -277,7 +277,7 @@ if ( ! class_exists( 'PDS_Send_Email_to_Basic_Student' ) ) {
  * The main function responsible for returning the one true PDS_Send_Email_to_Basic_Student
  * instance to functions everywhere
  *
- * @since	  {{VERSION}}
+ * @since	  1.0.0
  * @return	  \PDS_Send_Email_to_Basic_Student The one true PDS_Send_Email_to_Basic_Student
  */
 add_action( 'plugins_loaded', 'pds_send_email_to_basic_student_load' );

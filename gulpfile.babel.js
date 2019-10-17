@@ -235,6 +235,8 @@ gulp.task('build',
 gulp.task('default',
   gulp.series('build', watch));
 
+gulp.task( 'version', version );
+
 function version() {
 	
     return gulp.src([
@@ -337,4 +339,4 @@ function rename( done ) {
 
 // Package task
 gulp.task('package',
-  gulp.series(setProd, version, 'build', generate_pot, releaseCopy, 'release:grunt-compress', rename, releaseCleanup, removeProd, 'build'));
+  gulp.series(setProd, 'version', 'build', generate_pot, releaseCopy, 'release:grunt-compress', rename, releaseCleanup, removeProd, 'build'));
